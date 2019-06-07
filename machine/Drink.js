@@ -2,21 +2,6 @@ import React from 'react';
 import { Segment, Card, Icon, Image, Label, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 class Drink extends React.Component {
-
-  static defaultProps = {
-    item: {
-      name: 'empty',
-      price: 0,
-      quantity: 0
-    }
-  }
-
-  onClickGetButton(){
-    this.props.item.quantity = this.props.item.quantity -1;
-    console.log(this.props.item.quantity);
-    console.log(this.props.item)
-  }
-
   render() {
     const { item } = this.props;
     return (
@@ -60,22 +45,5 @@ class Drink extends React.Component {
 //   )
 // }
 
-// Drink.defaultProps = {
-//   item: {
-//     name: 'empty',
-//     price: 0,
-//     quantity: 0
-//   }
-// }
-
-const itemShape = {
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired
-}
-
-Drink.propTypes = {
-  item: PropTypes.shape(itemShape)
-}
 
 export default Drink;
